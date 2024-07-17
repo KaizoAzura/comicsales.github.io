@@ -1,0 +1,154 @@
+:root {
+  --blue-color: #0000ff;
+  --white-color: #ffffff;
+  --gold-color: #ffd700;
+  --active-color: #002fff;
+  --border-color: #7e7e7e;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Nunito", sans-serif;
+}
+
+.container-fluid {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* sidebar */
+
+.sidebar {
+  background-color: #0000ff;
+  height: 100vh;
+  padding: 1rem;
+  box-sizing: border-box;
+  border-radius: 0 0.5rem 0.5rem 0;
+  color: #fff;
+  overflow-y: auto;
+  transform: translateX(-200%);
+  transition: 0.5s;
+}
+
+.sidebar.show {
+  transform: translateX(0);
+  transition: 0.5s;
+  z-index: 9999;
+}
+
+.sidebar.hide {
+  transform: translateX(-200%);
+  transition: 0.5s;
+}
+
+.sidebar::-webkit-scrollbar {
+  display: none;
+}
+
+/* logo */
+
+.logo {
+  border-bottom: 1px solid var(--white-color);
+}
+
+.logo .brand {
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--white-color);
+}
+
+.logo .brand span {
+  color: var(--gold-color);
+}
+
+.logo #btnCloseSidebar {
+  text-decoration: none;
+  color: var(--white-color);
+}
+
+/* sidebar nav */
+.sidebar .nav-link:hover {
+  background-color: var(--active-color);
+  transition: 0.3s;
+}
+
+.sidebar .nav-link {
+  border-radius: 0.5rem;
+  transition: 0.3s;
+}
+
+.sidebar .nav-link.active {
+  background-color: var(--active-color);
+  font-weight: 500;
+}
+
+/* main content */
+
+.main-content {
+  width: 100%;
+  z-index: 999;
+}
+
+/* navbar */
+
+.navbar {
+  width: 100%;
+  border-bottom: 1px solid var(--gold-color);
+  background-color: var(--white-color);
+}
+
+.navbar .nav-link {
+  border: 1px solid var(--border-color);
+  border-radius: 0.4rem;
+}
+
+/* Responsive */
+
+/* tablet */
+@media screen and (min-width: 767px) {
+  .sidebar {
+    width: 245px !important;
+    transform: translateX(0);
+  }
+
+  .sidebar.hide {
+    transform: translateX(0);
+    width: 80px !important;
+  }
+
+  .sidebar.hide .logo {
+    justify-content: center !important;
+  }
+
+  .sidebar.hide .brand {
+    display: none;
+  }
+
+  .sidebar.hide .nav-link {
+    text-align: center !important;
+  }
+
+  .sidebar.hide .nav-link i {
+    margin: 0 !important;
+  }
+
+  .sidebar.hide .nav-link span {
+    display: none;
+  }
+
+  /* main content */
+
+  .main-content {
+    margin-left: 250px;
+  }
+
+  .main-content.expand {
+    margin-left: 75px;
+  }
+
+  .main-content #btnShowSidebar {
+    display: none;
+  }
+}
