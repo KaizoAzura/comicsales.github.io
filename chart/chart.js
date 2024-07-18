@@ -53,7 +53,10 @@ const salesChart = new Chart(ctx, {
 });
 
 function updateChart() {
-  if (window.innerWidth < 576) {
+  if (
+    window.innerWidth < 576 ||
+    (window.innerWidth >= 992 && window.innerWidth < 1200)
+  ) {
     salesChart.options.scales.x = {
       display: false,
     };
@@ -66,6 +69,7 @@ function updateChart() {
 }
 
 window.addEventListener("resize", updateChart);
+
 updateChart();
 
 // Revenue Chart

@@ -116,6 +116,11 @@ form .form-control:focus {
   z-index: 999;
 }
 
+.main-content img {
+  border-radius: 0.5rem;
+  object-fit: cover;
+}
+
 /* navbar */
 
 .navbar {
@@ -155,6 +160,7 @@ form .form-control:focus {
 .card .card-header .link {
   color: var(--active-color);
   font-weight: 600;
+  font-size: 1rem;
 }
 
 .card .card-body a {
@@ -165,6 +171,27 @@ form .form-control:focus {
   color: var(--black-color);
 }
 
+.analytic-group .analytic-group-card {
+  border-bottom: 1px solid var(--border-color);
+}
+
+.analytic-group .icon {
+  background-color: #002fff85;
+  color: var(--white-color);
+  font-size: 1rem;
+  text-decoration: none;
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+}
+
+.analytic-group .text {
+  font-size: 0.8rem;
+  color: var(--border-color);
+}
+
+.analytic-group h4 {
+  font-size: 1.1rem;
+}
 /* Responsive */
 
 /* tablet */
